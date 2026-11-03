@@ -1,0 +1,24 @@
+{
+  "tool": "image_gen.imagegen",
+  "purpose": "Игровые фоны и отдельная подушка для первого локального прототипа.",
+  "assets": [
+    {
+      "file": "room.png",
+      "prompt": "Use case: precise-object-edit. Edit target: the provided vertical mobile reading nook illustration. Produce a CLEAN GAME BACKGROUND, same portrait proportions and EXACT same composition, camera angle, objects, chair geometry, light and hand-painted gouache/watercolor style. Remove ALL interface text and paper interface labels at top and bottom, all chevrons, buttons, icons, counter and captions. Continue the room illustration naturally in those areas. Remove ALL envelopes including between books, behind cushion and under cup. Remove ONLY the embroidered decorative cushion from the seat, leaving the burgundy chair back and seat visible; keep the knitted throw in its original position on the chair's left side. No pillow anywhere. No envelopes anywhere. Keep bookshelf, snowy blue window, garland, lamp, ceramic cup, side table, carpet and chair in their exact original placements. This will have a separate interactive cushion overlaid around x=46%, y=55% of the full composition. Keep original illustration aesthetic, paper grain, warm amber light, burgundy chair. No new text, no phone frame, no watermarks.",
+      "reference": "docs/design/mockups/01-reading-nook.png",
+      "transparentBackground": false
+    },
+    {
+      "file": "desk.png",
+      "prompt": "Use case: precise-object-edit. Edit target: provided vertical mobile winter writing desk illustration. Produce a CLEAN GAME BACKGROUND with EXACT same composition, camera view, palette, hand-painted gouache/watercolor style, warm light and walnut tabletop. Remove ALL FIFTEEN envelopes, ribbons and wax seals, including large foreground envelope, naturally fill entire empty tabletop with matching wood grain. Remove all UI text, labels, counts, arrows, paper buttons and all paper UI fragments, naturally fill underlying scene. Preserve lamp in upper right, snowy blue window and garland in upper portion, cup at lower left and fountain pen lower right, desk drawer and knob below. Main middle and lower table area should be empty and calm for interactive digital envelopes and readable paper to be overlaid. No letter sheets anywhere, no envelopes anywhere, no text or symbols, no phone frame, no watermark. Maintain identical gorgeous textured hand-painted style.",
+      "reference": "docs/design/mockups/02-letter-desk.png",
+      "transparentBackground": false
+    },
+    {
+      "file": "cushion.png",
+      "prompt": "Use case: background-extraction. The input is a style and object reference. Extract/recreate ONLY the single square cream decorative throw cushion with embroidered evergreen sprigs and burgundy berries which sits on the burgundy chair in the reference. No chair, no blanket, no envelope, no room, no text. One isolated front-facing slightly perspective square fluffy cushion, matching exact hand-painted gouache, cream woven cloth texture, embroidery motifs, soft warm amber light and delicate pencil edges. Center this one cushion with modest padding, at large resolution. Actual transparent background (alpha), no checkerboard painted in, no artificial floor shadow. Preserve irregular soft cushion edges. A game foreground sprite; all other pixels transparent.",
+      "reference": "docs/design/mockups/01-reading-nook.png",
+      "transparentBackground": true
+    }
+  ]
+}

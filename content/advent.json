@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "locale": "ru-RU",
+  "recipientName": "Даша",
+  "letterCount": 15,
+  "letters": [
+    {
+      "id": "letter-01",
+      "contentStatus": "draft",
+      "envelopeTitle": "Когда хочется уюта",
+      "salutation": "Даша,",
+      "paragraphs": [
+        "Пусть сегодня можно будет никуда не спешить. Устроиться поудобнее, выдохнуть и оставить все дела на потом.",
+        "Мне хочется, чтобы в этих маленьких сюрпризах ты чувствовала мою любовь. И чтобы даже самый обычный вечер становился немного теплее."
+      ],
+      "signature": [
+        "Обнимаю тебя.",
+        "Твой муж"
+      ],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-02",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-03",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-04",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-05",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-06",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-07",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-08",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-09",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-10",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-11",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-12",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-13",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-14",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    },
+    {
+      "id": "letter-15",
+      "contentStatus": "draft",
+      "envelopeTitle": "",
+      "salutation": "",
+      "paragraphs": [],
+      "signature": [],
+      "giftId": null,
+      "packageNumber": null,
+      "pickupNote": null
+    }
+  ]
+}
