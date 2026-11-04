@@ -1,9 +1,10 @@
 import type { CSSProperties } from 'react';
 
-type IconName = 'letter' | 'star' | 'arrow' | 'close' | 'gift' | 'check' | 'settings';
+type IconName = 'letter' | 'star' | 'arrow' | 'close' | 'gift' | 'check' | 'settings' | 'music';
 
 export function Icon({ name, className = '' }: { name: IconName; className?: string }) {
   const paths: Record<IconName, React.ReactNode> = {
+    music: <><path d="M12 23V8l14-3v15M12 12l14-3" /><ellipse cx="8" cy="24" rx="4" ry="3" /><ellipse cx="22" cy="21" rx="4" ry="3" /></>,
     letter: <><rect x="3" y="5" width="26" height="22" rx="2" /><path d="m4 6 12 11L28 6M4 26l9-9m15 9-9-9" /></>,
     star: <path d="m16 3 3.7 8 8.8 1.1-6.5 6 1.8 8.7-7.8-4.4-7.8 4.4 1.8-8.7-6.5-6 8.8-1.1Z" />,
     arrow: <path d="m19 6-10 10 10 10" />,

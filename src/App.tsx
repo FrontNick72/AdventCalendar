@@ -10,6 +10,7 @@ import { Room } from './components/Room';
 import { Desk } from './components/Desk';
 import { LetterView } from './components/LetterView';
 import { ProgressTransfer } from './components/ProgressTransfer';
+import { Music } from './components/Music';
 import { HOUSE } from './scenes/house';
 
 function browserStorage(): StorageLike | null {
@@ -134,6 +135,7 @@ export default function App() {
         {view === 'letter' && complete && entry.openedAt && <LetterView letter={letter} unwrapped={entry.unwrappedAt !== null}
           onUnwrap={() => dispatch({ type: 'unwrap', letterId: letter.id, at: new Date().toISOString() })}
           onUndo={() => dispatch({ type: 'undo-unwrap', letterId: letter.id })} onBack={() => setView('desk')} />}
+        <Music hidden={arrival !== null} />
         {!arrival && <button className="settings-toggle icon-button" aria-label="Настройки" onClick={() => setSettingsOpen(true)}><Icon name="settings" /></button>}
         {arrival && <div className="desk-arrival-controls"><p role="status">Для тебя загорается свет</p><button ref={skipArrival} className="text-button on-dark" onClick={() => setArrival(null)}>Перейти к письмам</button></div>}
         <span className="visually-hidden" role="status">{notice}</span>
