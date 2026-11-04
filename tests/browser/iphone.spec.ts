@@ -68,7 +68,7 @@ test('iPhone: real taps find 15 letters, restore a partial search and open the d
   expect(errors).toEqual([]);
 });
 
-test('iPhone: safe areas, a long ready letter and separate unwrapping survive rotation', async ({ page }, info) => {
+test('iPhone: safe areas, a long ready letter and separate unwrapping survive rotation', { tag: '@dev-content' }, async ({ page }, info) => {
   // This fixture is intercepted in the test browser only, never written to the author JSON.
   const fixture = structuredClone(rawContent);
   Object.assign(fixture.letters[3], {

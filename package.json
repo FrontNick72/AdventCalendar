@@ -10,7 +10,9 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "test:iphone": "playwright test",
     "check:content": "node --import tsx scripts/check-content.ts",
-    "optimize:assets": "node scripts/optimize-assets.mjs"
+    "optimize:assets": "node scripts/optimize-assets.mjs",
+    "preview:phone": "npm run build && node scripts/preview-phone.mjs",
+    "test:iphone:build": "npm run build && playwright test --config playwright.build.config.ts"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.0.0",
@@ -24,6 +26,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^6.2.1",
+    "qrcode": "^1.5.4",
     "sharp": "^0.35.5",
     "tsx": "^4.0.0",
     "typescript": "^5.7.0",
