@@ -18,6 +18,10 @@ export interface AdventContent {
   letters: Letter[];
 }
 
+export function letterTitle(letter: Letter): string {
+  return letter.envelopeTitle.trim() || `Письмо ${letter.id.slice(-2)}`;
+}
+
 function object(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }

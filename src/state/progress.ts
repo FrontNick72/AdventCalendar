@@ -1,3 +1,5 @@
+import { isSceneId, type SceneId } from '../scenes/house';
+
 export interface LetterProgress {
   foundAt: string | null;
   openedAt: string | null;
@@ -5,7 +7,8 @@ export interface LetterProgress {
 }
 
 export interface Progress {
-  schemaVersion: 1;
+  schemaVersion: 2;
+  currentScene: SceneId;
   introSeen: boolean;
   revealedIds: string[];
   letters: Record<string, LetterProgress>;
@@ -13,6 +16,7 @@ export interface Progress {
 
 export type Action =
   | { type: 'intro' }
+  | { type: 'scene'; sceneId: SceneId }
   | { type: 'reveal'; letterId: string }
   | { type: 'find' | 'open' | 'unwrap'; letterId: string; at: string }
   | { type: 'undo-unwrap'; letterId: string }
@@ -20,7 +24,8 @@ export type Action =
 
 export function createProgress(ids: string[]): Progress {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
+    currentScene: 'nook',
     introSeen: false,
     revealedIds: [],
     letters: Object.fromEntries(ids.map((id) => [id, { foundAt: null, openedAt: null, unwrappedAt: null }])),
@@ -38,6 +43,7 @@ export function isComplete(state: Progress): boolean {
 export function progressReducer(state: Progress, action: Action): Progress {
   if (action.type === 'intro') return state.introSeen ? state : { ...state, introSeen: true };
   if (action.type === 'reset') return createProgress(Object.keys(state.letters));
+  if (action.type === 'scene') return isSceneId(action.sceneId) ? { ...state, currentScene: action.sceneId } : state;
   if (!Object.hasOwn(state.letters, action.letterId)) return state;
   const previous = state.letters[action.letterId];
   if (action.type === 'reveal') {

@@ -1,7 +1,8 @@
 import { createProgress, type Progress } from './progress';
+import { isSceneId } from '../scenes/house';
 
-// A separate key protects the future 15-letter calendar from demo progress.
-export const STORAGE_KEY = 'dasha-winter:prototype-one-letter:v1';
+// Never read or overwrite the old one-letter demo save.
+export const STORAGE_KEY = 'dasha-winter:house-15:v2';
 export type StorageStatus = 'ok' | 'unavailable' | 'invalid';
 export interface StorageLike {
   getItem(key: string): string | null;
@@ -19,7 +20,7 @@ function timestamp(value: unknown): value is string | null {
 
 export function parseProgress(raw: string, ids: string[]): Progress {
   const value: unknown = JSON.parse(raw);
-  if (!record(value) || value.schemaVersion !== 1 || typeof value.introSeen !== 'boolean' ||
+  if (!record(value) || value.schemaVersion !== 2 || !isSceneId(value.currentScene) || typeof value.introSeen !== 'boolean' ||
       !Array.isArray(value.revealedIds) || !value.revealedIds.every((id) => typeof id === 'string' && ids.includes(id)) ||
       new Set(value.revealedIds).size !== value.revealedIds.length || !record(value.letters) ||
       Object.keys(value.letters).length !== ids.length) throw new Error('Неверный формат сохранения.');

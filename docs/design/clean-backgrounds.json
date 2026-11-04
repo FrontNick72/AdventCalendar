@@ -1,0 +1,21 @@
+{
+  "tool": "image_gen.imagegen",
+  "purpose": "Удалить неподвижные дубли интерактивных предметов с фонов; оригиналы сохранены.",
+  "assets": [
+    {
+      "reference": "public/assets/room.png",
+      "file": "public/assets/room-clean.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this exact cozy winter room background. Preserve the exact portrait image framing, perspective, all furniture geometry, entire burgundy armchair and knitted throw, lamp, window, garland, colors, storybook painted paper texture. Remove ONLY the glass snow globe and its wooden base at x12%,y45% on the low left shelf, leaving the wooden shelf naturally empty there. Remove ONLY the single burgundy book at x21%,y30% in the middle-left shelf, naturally show the dark wooden back of the shelf there; keep neighboring books. Make the left small drawer opening at x12%,y53% an open dark recess WITHOUT drawer front or knob, so a separate interactive drawer front can be placed there. No letters, no envelopes, no cushion. Keep everything else unchanged, no new props, no text or UI. This is a clean game background underlying separate moving object sprites."
+    },
+    {
+      "reference": "public/assets/tree.png",
+      "file": "public/assets/tree-clean.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this exact cozy Christmas tree room background. Keep EXACT portrait framing, tree geometry and lights, snowy window, shelf, rug and hand-painted storybook texture, palette, shadows. Remove ONLY the small wrapped burgundy gift box on the floor at x55%,y67% and the entire wicker basket with blanket on floor at x83%,y61%; naturally fill these two areas with matching carpet and wall. Preserve the tree's own wicker planter. Make front panel of left wooden chest into a dark empty wooden recess without a front face or knob; keep the rest of chest and blanket. Separate moving sprites will overlay these spaces. Keep all other tree ornaments/decorative details unchanged. No text, letters, envelopes or UI, no new objects."
+    },
+    {
+      "reference": "public/assets/study.png",
+      "file": "public/assets/study-clean.png",
+      "prompt": "Use case: precise-object-edit. Edit target: this exact cozy winter writing study background. Keep EXACT portrait framing, furniture, perspective, shelves, window, curtain, lamp, rug, chair and hand-painted storybook texture, warm palette. Remove ONLY the closed burgundy notebook on the tabletop at x48%,y55% and the small gold picture frame on tabletop at x75%,y52%, naturally fill with wood grain/wall. Make the upper right desk drawer face at x84%,y62% into a dark empty drawer opening without front or knob; preserve surrounding carved wood frame, all other drawers, legs and chair. These areas will receive separate moving object sprites. Preserve everything else, no new objects, no text, letters, envelopes or UI."
+    }
+  ]
+}

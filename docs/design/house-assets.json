@@ -1,0 +1,28 @@
+{
+  "tool": "image_gen.imagegen",
+  "date": "2026-11-04",
+  "reference": "public/assets/room.png",
+  "assets": [
+    {
+      "file": "public/assets/tree.png",
+      "transparentBackground": false,
+      "prompt": "Use case: illustration-story. Asset type: portrait mobile hidden-object game background, aspect 1:1.9. Reference image is ONLY the style reference: match its richly painted storybook illustration, grainy paper, honey light, burgundy and evergreen palette, blue snowy evening. Create a DIFFERENT cozy corner of this SAME winter house, with Christmas tree centrally, warm fairy lights, snowy window right, low wooden chest at left, soft rug, shelves. No people, no letters, no envelopes, no lettering, no UI. Leave top 22% and bottom 20% visually quiet for HTML interface. Active play area middle 25%-73%: visible tree ornaments upper-middle, large wooden chest left-middle, small wrapped burgundy box lower-middle, basket right-middle. Composition must read well on a phone. These objects will be separately overlaid with code-native moving covers; do not add text or hidden envelopes. Detailed warm book illustration, same atmosphere as reference."
+    },
+    {
+      "file": "public/assets/study.png",
+      "transparentBackground": false,
+      "prompt": "Use case: illustration-story. Asset type: portrait mobile hidden-object game background, aspect 1:1.9. Input image is a STYLE reference only: faithfully match hand-painted cozy illustrated winter home with grainy textured paper, burgundy and dark evergreen accents, warm honey lamplight, snowy blue evening. Create a different room in the same house: an intimate writing study, tall wooden bookcase on left, snowy window on right with lace curtain at far right edge, wooden writing desk across lower middle, warm brass desk lamp on right, little empty picture frame close to lamp, blank closed notebook on desk. Top 22% and bottom 20% should be quiet background for interface. Play objects distributed in central 25%-72% area. Desk drawers around 62% image height. Books at 34%, notebook on desktop at54%, frame around40%, curtain right around27%. These are anchors for separate moving code layers, no envelopes, no paper letters, no text of any kind, no UI, no people. Rich atmospheric storybook quality matching reference."
+    },
+    {
+      "file": "public/assets/props-atlas.png",
+      "transparentBackground": true,
+      "prompt": "Use case: illustration-story. Asset type: ONE cohesive transparent game object sprite atlas, a square with an EXACT regular 3 by 3 grid of 9 isolated props. Input image is style reference ONLY. Paint each prop with the same detailed warm gouache storybook technique, visible woven cloth or wood grain, soft amber light, hand-painted irregular edges. ALL background pixels must be truly transparent alpha. No grid lines, no labels, no letters or UI. Every object centered inside its own equal square grid cell, at least 15% empty transparent padding within every cell; objects must never cross cells. ROW 1 left to right: a closed burgundy leather book with gold botanical embossing, a wooden carved walnut drawer FRONT with small brass knob (front view), a glass snow globe with tiny fir tree and wooden base. ROW 2 left to right: a short piece of cream lace curtain folded into vertical drapes, a round burgundy Christmas ornament with gold botanical details and little brass cap, a small burgundy wrapped box with gold ribbon. ROW 3 left to right: wicker basket with cream knitted throw, a burgundy Christmas stocking with cream cuff, a small ornate antique gold picture frame filled with plain cream paper. One complete isolated object in each cell; no cast shadow on background, no scene/background. Rich painterly detail is essential, not flat vector or cartoon UI."
+    }
+  ],
+  "processing": {
+    "script": "scripts/optimize-assets.mjs",
+    "method": "sharp: WebP backgrounds at width <= 910, cushion <= 420; nine equal atlas cells extracted and alpha-trimmed, then resized inside 300x300 preserving alpha",
+    "runtime": "Only WebP files are requested by the browser. Source PNG files remain available for authoring.",
+    "interaction": "Each hiding place has a separate moving image layer and an independent HTML/CSS envelope. The background is decorative; the collectible envelope is never baked into it."
+  }
+}
