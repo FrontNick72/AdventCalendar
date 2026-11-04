@@ -41,6 +41,12 @@ test('iPhone: real taps find 15 letters, restore a partial search and open the d
     }
   }
   await page.getByRole('button', { name: 'К столу с письмами' }).tap();
+  if (info.project.use.reducedMotion !== 'reduce') {
+    await expect(page.locator('.desk-arrival')).toHaveCount(1);
+    await expect(page.locator('.desk-interaction')).toHaveAttribute('inert', '');
+    await page.screenshot({ path: info.outputPath('arrival.png') });
+  }
+  await expect(page.locator('.desk-arrival')).toHaveCount(0);
   await expect(page.locator('.collection-envelope')).toHaveCount(15);
   await expect(page.locator('.envelope-collection')).toHaveCSS('opacity', '1');
   await page.screenshot({ path: info.outputPath('desk.png') });

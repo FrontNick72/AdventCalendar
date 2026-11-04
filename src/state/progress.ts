@@ -15,6 +15,7 @@ export interface Progress {
 }
 
 export type Action =
+  | { type: 'restore'; progress: Progress }
   | { type: 'intro' }
   | { type: 'scene'; sceneId: SceneId }
   | { type: 'reveal'; letterId: string }
@@ -41,6 +42,7 @@ export function isComplete(state: Progress): boolean {
 }
 
 export function progressReducer(state: Progress, action: Action): Progress {
+  if (action.type === 'restore') return action.progress;
   if (action.type === 'intro') return state.introSeen ? state : { ...state, introSeen: true };
   if (action.type === 'reset') return createProgress(Object.keys(state.letters));
   if (action.type === 'scene') return isSceneId(action.sceneId) ? { ...state, currentScene: action.sceneId } : state;

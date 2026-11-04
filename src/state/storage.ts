@@ -15,7 +15,10 @@ function record(value: unknown): value is Record<string, unknown> {
 }
 
 function timestamp(value: unknown): value is string | null {
-  return value === null || (typeof value === 'string' && Number.isFinite(Date.parse(value)));
+  if (value === null) return true;
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z$/.test(value) || !Number.isFinite(Date.parse(value))) return false;
+  const normalized = value.replace(/(?:\.(\d{1,3}))?Z$/, (_, fraction: string | undefined) => `.${(fraction ?? '').padEnd(3, '0')}Z`);
+  return new Date(value).toISOString() === normalized;
 }
 
 export function parseProgress(raw: string, ids: string[]): Progress {
@@ -25,14 +28,19 @@ export function parseProgress(raw: string, ids: string[]): Progress {
       new Set(value.revealedIds).size !== value.revealedIds.length || !record(value.letters) ||
       Object.keys(value.letters).length !== ids.length) throw new Error('Неверный формат сохранения.');
 
+  const result = createProgress(ids);
+  result.currentScene = value.currentScene;
+  result.introSeen = value.introSeen;
+  result.revealedIds = [...value.revealedIds] as string[];
   for (const id of ids) {
     const letter = value.letters[id];
     if (!record(letter) || !timestamp(letter.foundAt) || !timestamp(letter.openedAt) || !timestamp(letter.unwrappedAt) ||
         (letter.foundAt !== null && !value.revealedIds.includes(id)) ||
         (letter.openedAt !== null && letter.foundAt === null) ||
         (letter.unwrappedAt !== null && letter.openedAt === null)) throw new Error('Нарушена последовательность событий.');
+    // Event presence defines the sequence; a device's clock can change between visits.
+    result.letters[id] = { foundAt: letter.foundAt, openedAt: letter.openedAt, unwrappedAt: letter.unwrappedAt };
   }
-  const result = value as unknown as Progress;
   if (Object.values(result.letters).some((letter) => letter.openedAt) &&
       !Object.values(result.letters).every((letter) => letter.foundAt)) throw new Error('Письмо открыто до завершения поиска.');
   return result;
