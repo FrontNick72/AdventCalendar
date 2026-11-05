@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "targetCount": 15,
+  "gifts": [
+    {
+      "id": "gift-01",
+      "number": 1,
+      "name": "Davinchi Malvasia Emilia IGT",
+      "category": "напитки",
+      "description": "Белое полусладкое вино.",
+      "status": "выбрано",
+      "packageNumber": 1
+    },
+    {
+      "id": "gift-02",
+      "number": 2,
+      "name": "Любимый клубничный рулетик",
+      "category": "сладости",
+      "description": "Бисквитный рулет с клубничной начинкой.",
+      "status": "выбрано",
+      "packageNumber": 2
+    },
+    {
+      "id": "gift-03",
+      "number": 3,
+      "name": "Магнит-проигрыватель BTS",
+      "category": "BTS / коллекционные вещи",
+      "description": "Магнит на холодильник с девятью миниатюрными пластинками BTS.",
+      "status": "куплено",
+      "packageNumber": 3
+    },
+    {
+      "id": "gift-04",
+      "number": 4,
+      "name": "Две книги-расследования",
+      "category": "книги / развлечения",
+      "description": "Две интерактивные детективные книги; один сюрприз.",
+      "status": "куплено",
+      "packageNumber": 4
+    },
+    {
+      "id": "gift-05",
+      "number": 5,
+      "name": "Два красивых бокала",
+      "category": "посуда / уют",
+      "description": "Два бокала; один сюрприз.",
+      "status": "куплено",
+      "packageNumber": 5
+    },
+    {
+      "id": "gift-06",
+      "number": 6,
+      "name": "Очки с пирсингом",
+      "category": "аксессуары / стиль",
+      "description": "Очки с пирсингом.",
+      "status": "куплено",
+      "packageNumber": 6
+    },
+    {
+      "id": "gift-07",
+      "number": 7,
+      "name": "Румяна Patrick Ta",
+      "category": "косметика",
+      "description": "Румяна бренда Patrick Ta.",
+      "status": "куплено",
+      "packageNumber": 7
+    },
+    {
+      "id": "gift-08",
+      "number": 8,
+      "name": "Блокнот Hobonichi",
+      "category": "канцелярия / планирование",
+      "description": "Японский блокнот / ежедневник.",
+      "status": "куплено",
+      "packageNumber": 8
+    },
+    {
+      "id": "gift-09",
+      "number": 9,
+      "name": "KDH Gat-Serum Discovery Trio Set",
+      "category": "уход за кожей / косметика",
+      "description": "Набор из трёх сывороток по 30 мл, всего 90 мл.",
+      "status": "куплено",
+      "packageNumber": 9
+    },
+    {
+      "id": "gift-10",
+      "number": 10,
+      "name": "Сертификат на прокол уха",
+      "category": "впечатления / стиль",
+      "description": "Студия, стоимость и условия сертификата пока не определены. Покупка не подтверждена.",
+      "status": "выбрано",
+      "packageNumber": 10
+    }
+  ]
+}

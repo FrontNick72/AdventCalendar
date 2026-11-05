@@ -141,16 +141,18 @@
     },
     {
       "id": "letter-10",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется маленьких перемен",
       "salutation": "",
-      "paragraphs": [],
+      "paragraphs": [
+        "Внутри — повод воплотить одну маленькую задумку. Все детали выбираешь ты, а компания и поддержка — с меня. Если захочешь, пойдём вместе ❤️"
+      ],
       "signature": [
         "С любовью, твой Никитосий."
       ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "giftId": "gift-10",
+      "packageNumber": 10,
+      "pickupNote": "Найди свёрток №10."
     },
     {
       "id": "letter-11",
