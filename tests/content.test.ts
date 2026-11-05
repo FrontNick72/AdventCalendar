@@ -5,12 +5,13 @@ import { assertReady, parseContent } from '../src/content/model.ts';
 
 const full = JSON.parse(readFileSync(new URL('../content/advent.json', import.meta.url), 'utf8'));
 const prototype = JSON.parse(readFileSync(new URL('../content/prototype.json', import.meta.url), 'utf8'));
+const template = JSON.parse(readFileSync(new URL('../content/advent.example.json', import.meta.url), 'utf8'));
 
-test('the prototype is separate from the 15 unassigned authoring drafts', () => {
+test('the prototype is separate from the 15-letter calendar and unassigned template', () => {
   assert.equal(parseContent(prototype).letterCount, 1);
   const content = parseContent(full);
   assert.equal(content.letterCount, 15);
-  assert(content.letters.every((letter) => letter.packageNumber === null && letter.giftId === null));
+  assert(parseContent(template).letters.every((letter) => letter.packageNumber === null && letter.giftId === null));
   assert.throws(() => assertReady(content));
   assert.throws(() => assertReady(parseContent(prototype)));
 });
@@ -30,6 +31,8 @@ test('a completed calendar requires unique gift and package assignments', () => 
     contentStatus: 'ready', envelopeTitle: 'Заголовок', salutation: 'Даша,', paragraphs: ['Тестовый текст.'],
     signature: ['Подпись'], giftId: `gift-${index + 1}`, packageNumber: index + 1,
   }));
+  assert.doesNotThrow(() => assertReady(ready));
+  ready.letters.forEach((letter) => { letter.salutation = ''; });
   assert.doesNotThrow(() => assertReady(ready));
   ready.letters[1].packageNumber = 1;
   assert.throws(() => assertReady(ready));

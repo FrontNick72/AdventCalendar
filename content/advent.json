@@ -6,108 +6,138 @@
   "letters": [
     {
       "id": "letter-01",
-      "contentStatus": "draft",
-      "envelopeTitle": "Когда хочется уюта",
-      "salutation": "Даша,",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется расслабиться и выдохнуть",
+      "salutation": "",
       "paragraphs": [
-        "Пусть сегодня можно будет никуда не спешить. Устроиться поудобнее, выдохнуть и оставить все дела на потом.",
-        "Мне хочется, чтобы в этих маленьких сюрпризах ты чувствовала мою любовь. И чтобы даже самый обычный вечер становился немного теплее."
+        "Внутри — маленький повод поставить дела на паузу. Добавь что-нибудь вкусное, устраивайся поудобнее и зови меня — составлю тебе компанию ❤️"
       ],
       "signature": [
-        "Обнимаю тебя.",
-        "Твой муж"
+        "С любовью, твой Никитосий."
       ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "giftId": "gift-01",
+      "packageNumber": 1,
+      "pickupNote": "Найди свёрток №1."
     },
     {
       "id": "letter-02",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется маленькой радости",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Для радости не всегда нужен особенный повод. Иногда достаточно чего-то любимого и нескольких минут для себя. Внутри тебя ждёт как раз такая маленькая радость ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-02",
+      "packageNumber": 2,
+      "pickupNote": "Найди свёрток №2."
     },
     {
       "id": "letter-03",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется добавить дню музыки",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Немного твоего любимого мира — в неожиданно маленьком формате. Пусть даже среди обычных дел находится повод улыбнуться 💜"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-03",
+      "packageNumber": 3,
+      "pickupNote": "Найди свёрток №3."
     },
     {
       "id": "letter-04",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется немного поломать голову",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Здесь кое-кто оставил больше вопросов, чем ответов. Самое время устроиться поудобнее и во всём разобраться. Если понадобится напарник — я рядом ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-04",
+      "packageNumber": 4,
+      "pickupNote": "Найди свёрток №4."
     },
     {
       "id": "letter-05",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется красоты в мелочах",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Пусть у нас будет ещё один повод красиво накрыть на стол и посидеть вдвоём. Даже если в меню просто ужин после обычного дня ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-05",
+      "packageNumber": 5,
+      "pickupNote": "Найди свёрток №5."
     },
     {
       "id": "letter-06",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется немного дерзости",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Иногда для нового настроения хватает одной детали. Кажется, Чонгук такую бы одобрил 😉 Уже хочу увидеть её на тебе ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-06",
+      "packageNumber": 6,
+      "pickupNote": "Найди свёрток №6."
     },
     {
       "id": "letter-07",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется добавить красок",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Для маленьких экспериментов перед зеркалом и сборов под любимую музыку. Пусть сам процесс приносит столько же удовольствия, сколько результат ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-07",
+      "packageNumber": 7,
+      "pickupNote": "Найди свёрток №7."
     },
     {
       "id": "letter-08",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется собрать мысли",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Пусть у твоих идей, мечтаний и внезапных «а вот было бы здорово» появится своё место. А если для задуманного понадобится сообщник — ты знаешь, где меня найти ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-08",
+      "packageNumber": 8,
+      "pickupNote": "Найди свёрток №8."
     },
     {
       "id": "letter-09",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется немного заботы о себе",
       "salutation": "",
-      "paragraphs": [],
-      "signature": [],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "paragraphs": [
+        "Для тихого вечера, мягкой пижамы и нескольких минут только для себя. А если захочется ещё и обниматься — эта часть подарка всегда доступна ❤️"
+      ],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
+      "giftId": "gift-09",
+      "packageNumber": 9,
+      "pickupNote": "Найди свёрток №9."
     },
     {
       "id": "letter-10",
@@ -115,7 +145,9 @@
       "envelopeTitle": "",
       "salutation": "",
       "paragraphs": [],
-      "signature": [],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
       "giftId": null,
       "packageNumber": null,
       "pickupNote": null
@@ -126,7 +158,9 @@
       "envelopeTitle": "",
       "salutation": "",
       "paragraphs": [],
-      "signature": [],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
       "giftId": null,
       "packageNumber": null,
       "pickupNote": null
@@ -137,7 +171,9 @@
       "envelopeTitle": "",
       "salutation": "",
       "paragraphs": [],
-      "signature": [],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
       "giftId": null,
       "packageNumber": null,
       "pickupNote": null
@@ -148,7 +184,9 @@
       "envelopeTitle": "",
       "salutation": "",
       "paragraphs": [],
-      "signature": [],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
       "giftId": null,
       "packageNumber": null,
       "pickupNote": null
@@ -159,7 +197,9 @@
       "envelopeTitle": "",
       "salutation": "",
       "paragraphs": [],
-      "signature": [],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
       "giftId": null,
       "packageNumber": null,
       "pickupNote": null
@@ -170,7 +210,9 @@
       "envelopeTitle": "",
       "salutation": "",
       "paragraphs": [],
-      "signature": [],
+      "signature": [
+        "С любовью, твой Никитосий."
+      ],
       "giftId": null,
       "packageNumber": null,
       "pickupNote": null

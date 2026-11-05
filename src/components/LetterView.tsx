@@ -11,7 +11,7 @@ export function LetterView({ letter, unwrapped, onUnwrap, onUndo, onBack }: {
       <Sprig className="paper-corner paper-corner--right" />
       <h1 id="letter-heading" tabIndex={-1}>{letterTitle(letter)}</h1>
       <div className="letter-rule" aria-hidden="true">❦</div>
-      <p className="salutation">{letter.salutation || 'Даша,'}</p>
+      {letter.salutation.trim() && <p className="salutation">{letter.salutation}</p>}
       <div className="letter-body">{letter.paragraphs.length ? letter.paragraphs.map((paragraph, index) => <p key={`${letter.id}-paragraph-${index}`}>{paragraph}</p>) : <p>Здесь будет твоё личное послание. Это письмо пока готовится.</p>}</div>
       <p className="letter-signature">{letter.signature.map((line, index) => <span key={`${letter.id}-signature-${index}`}>{line}</span>)}</p>
       <div className="gift-instruction">

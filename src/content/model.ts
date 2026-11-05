@@ -59,7 +59,7 @@ export function assertReady(content: AdventContent): void {
   const packages = new Set<number>();
   const gifts = new Set<string>();
   for (const letter of content.letters) {
-    if (letter.contentStatus !== 'ready' || !letter.envelopeTitle.trim() || !letter.salutation.trim() ||
+    if (letter.contentStatus !== 'ready' || !letter.envelopeTitle.trim() ||
         !letter.paragraphs.length || letter.paragraphs.some((p) => !p.trim()) ||
         !letter.signature.length || letter.signature.some((p) => !p.trim()) ||
         !letter.giftId?.trim() || letter.packageNumber === null || letter.packageNumber > 15 ||
