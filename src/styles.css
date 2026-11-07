@@ -125,8 +125,10 @@ button img { pointer-events: none; }
 .selected-envelope { position: absolute; top: 55%; left: 6%; right: 6%; text-align: center; }
 .selection-count { display: block; font: 13px/1.4 var(--display); letter-spacing: .12em; color: #ffe1b7; text-shadow: 0 1px 7px #2b140c; margin-bottom: 12px; }
 .selection-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-.selected-envelope-art { width: 62%; aspect-ratio: 1.6; transform: rotate(-3deg); }
-.selected-envelope-art .envelope-title { font-size: clamp(24px, 6.6vw, 30px); }
+.selected-envelope-art { width: 62%; aspect-ratio: 1.35; transform: rotate(-3deg); }
+.selected-envelope-art .envelope-title { font-size: clamp(19px, 5vw, 21px); }
+.selected-envelope-art .wax-seal { top: auto; bottom: 0; width: 14%; }
+.selected-envelope-art .envelope-sprig { width: 25%; }
 .next-letter .icon { transform: rotate(180deg); }
 .desk-bottom { position: absolute; left: 9%; right: 9%; bottom: max(2%, var(--safe-bottom)); text-align: center; }
 .letter-state { color: #ffe4b8; font: italic 400 19px/1.3 var(--display); text-shadow: 0 2px 8px #472615; min-height: 26px; margin: 0 0 8px; }
@@ -249,8 +251,8 @@ button img { pointer-events: none; }
   .selected-envelope { top: 52%; }
   .selection-count { margin-bottom: 6px; }
   .selection-row { gap: 6px; }
-  .selected-envelope-art { width: 52%; max-width: 140px; aspect-ratio: 1.7; }
-  .selected-envelope-art .envelope-title { font-size: 22px; }
+  .selected-envelope-art { width: 52%; max-width: 140px; aspect-ratio: 1.25; }
+  .selected-envelope-art .envelope-title { font-size: 18px; }
   .desk-bottom { left: 6%; right: 6%; }
   .letter-state { font-size: 17px; }
   .house-controls .scene-whisper { font-size: 21px; }

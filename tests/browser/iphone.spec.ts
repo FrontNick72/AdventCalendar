@@ -52,6 +52,9 @@ test('iPhone: real taps find 14 letters, restore a partial search and open the d
   await page.screenshot({ path: info.outputPath('desk.png') });
   for (let index = 0; index < 14; index++) {
     await page.locator('.collection-envelope').nth(index).tap();
+    const titleBox = await page.locator('.selected-envelope-art .envelope-title').boundingBox();
+    const sealBox = await page.locator('.selected-envelope-art .wax-seal').boundingBox();
+    expect(titleBox!.y + titleBox!.height).toBeLessThan(sealBox!.y);
     await page.getByRole('button', { name: 'Открыть письмо', exact: true }).tap();
     const title = rawContent.letters[index].envelopeTitle || `Письмо ${String(index + 1).padStart(2, '0')}`;
     await expect(page.locator('#letter-heading')).toHaveText(title);
