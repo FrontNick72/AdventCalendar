@@ -54,7 +54,7 @@ test('iPhone: downloaded file transfers partial progress to a fresh browser only
     await fresh.getByRole('button', { name: 'Настройки', exact: true }).tap();
     await choose(fresh, raw);
     await expect(fresh.getByRole('heading', { name: 'Заменить текущий прогресс?' })).toBeFocused();
-    await expect(fresh.locator('.restore-confirmation')).toContainText('Найдено: 3 из 15');
+    await expect(fresh.locator('.restore-confirmation')).toContainText('Найдено: 3 из 14');
     const headingBox = await fresh.getByRole('heading', { name: 'Заменить текущий прогресс?' }).boundingBox();
     expect(headingBox!.y).toBeLessThan(120);
     expect(await fresh.evaluate((key) => localStorage.getItem(key), STORAGE_KEY)).toBe(original);
@@ -64,7 +64,7 @@ test('iPhone: downloaded file transfers partial progress to a fresh browser only
     await choose(fresh, raw);
     await fresh.getByRole('button', { name: 'Заменить прогресс', exact: true }).tap();
     await expect(fresh.getByRole('dialog')).toHaveCount(0);
-    await expect(fresh.locator('.counter')).toHaveText('Найдено 3 из 15');
+    await expect(fresh.locator('.counter')).toHaveText('Найдено 3 из 14');
     await expect(fresh.getByRole('heading', { level: 1 })).toHaveText(HOUSE[1].title);
     await expect(fresh.getByRole('button', { name: 'Забрать спрятанное письмо', exact: true })).toHaveCount(1);
     await fresh.reload();
@@ -85,7 +85,7 @@ test('iPhone: complete imported archive restores reading and unwrap marks; bad f
     await expect(page.locator('.restore-confirmation')).toHaveCount(0);
     expect(await page.evaluate((key) => localStorage.getItem(key), STORAGE_KEY)).toBe(original);
   }
-  let full = fixture(15);
+  let full = fixture(14);
   full = progressReducer(full, { type: 'open', letterId: ids[0], at });
   full = progressReducer(full, { type: 'unwrap', letterId: ids[0], at });
   full = progressReducer(full, { type: 'open', letterId: ids[1], at });
@@ -108,7 +108,7 @@ test('iPhone: complete imported archive restores reading and unwrap marks; bad f
 });
 
 test('iPhone: desk arrival can be skipped; reload during arrival returns to the saved desk', async ({ page }, info) => {
-  await seed(page, fixture(15));
+  await seed(page, fixture(14));
   await page.goto('/');
   await page.getByRole('button', { name: 'Прогуляться по дому', exact: true }).tap();
   await page.getByRole('button', { name: 'К столу с письмами', exact: true }).tap();
@@ -123,7 +123,7 @@ test('iPhone: desk arrival can be skipped; reload during arrival returns to the 
     await page.reload();
   }
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Все письма дома');
-  await expect(page.locator('.collection-envelope')).toHaveCount(15);
+  await expect(page.locator('.collection-envelope')).toHaveCount(14);
   await page.getByRole('button', { name: 'Открыть письмо', exact: true }).tap();
   await expect(page.locator('#letter-heading')).toBeVisible();
 });
@@ -144,19 +144,19 @@ test('iPhone: damaged original is preserved until an explicitly confirmed valid 
   await page.getByRole('button', { name: 'Настройки', exact: true }).tap();
   await choose(page, exportProgress(fixture(3)));
   await page.getByRole('button', { name: 'Заменить прогресс', exact: true }).tap();
-  await expect(page.locator('.counter')).toHaveText('Найдено 3 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 3 из 14');
   await expect(page.locator('.storage-note')).toHaveCount(0);
   await page.reload();
-  await expect(page.locator('.counter')).toHaveText('Найдено 3 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 3 из 14');
 });
 
 test('iPhone: failed desk image releases arrival; changing motion preference also releases controls', async ({ page }, info) => {
   // The desk must not have entered WebKit's in-memory image cache before the failed load.
-  const partial = fixture(14);
+  const partial = fixture(13);
   partial.currentScene = 'study';
   await seed(page, partial);
   await page.goto('/');
-  await page.getByRole('button', { name: HOUSE[2].places[4].label, exact: true }).tap();
+  await page.getByRole('button', { name: HOUSE[2].places[3].label, exact: true }).tap();
   await page.getByRole('button', { name: 'Забрать спрятанное письмо', exact: true }).tap();
   await page.route('**/assets/desk.webp', (route) => route.abort());
   await page.getByRole('button', { name: 'К столу с письмами', exact: true }).tap();

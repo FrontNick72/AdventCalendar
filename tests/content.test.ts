@@ -7,12 +7,13 @@ const full = JSON.parse(readFileSync(new URL('../content/advent.json', import.me
 const prototype = JSON.parse(readFileSync(new URL('../content/prototype.json', import.meta.url), 'utf8'));
 const template = JSON.parse(readFileSync(new URL('../content/advent.example.json', import.meta.url), 'utf8'));
 
-test('the prototype is separate from the 15-letter calendar and unassigned template', () => {
+test('the prototype is separate from the 14-letter calendar and unassigned template', () => {
   assert.equal(parseContent(prototype).letterCount, 1);
   const content = parseContent(full);
-  assert.equal(content.letterCount, 15);
+  assert.equal(content.letterCount, 14);
   assert(parseContent(template).letters.every((letter) => letter.packageNumber === null && letter.giftId === null));
-  assert.throws(() => assertReady(content));
+  assert.doesNotThrow(() => assertReady(content));
+  assert.throws(() => assertReady(parseContent(template)));
   assert.throws(() => assertReady(parseContent(prototype)));
 });
 

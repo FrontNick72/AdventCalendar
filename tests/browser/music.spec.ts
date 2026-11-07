@@ -33,7 +33,7 @@ test('music network failure allows retry without affecting the search', async ({
   await page.getByRole('button', { name: 'Начать поиск', exact: true }).tap();
   await page.getByRole('button', { name: 'Включить музыку', exact: true }).tap();
   await expect(page.getByText('Музыка не включилась. Нажми на ноту ещё раз.')).toBeVisible();
-  await expect(page.locator('.counter')).toHaveText('Найдено 0 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 0 из 14');
   await page.unroute('**/audio/winter-house.m4a');
   await page.getByRole('button', { name: 'Включить музыку', exact: true }).tap();
   await expect(page.getByRole('button', { name: 'Выключить музыку', exact: true })).toBeVisible();

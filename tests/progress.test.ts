@@ -18,12 +18,12 @@ test('a concealed letter cannot be collected; repeated finds never increase the 
 });
 
 test('all letters are required to open any letter, including a found one', () => {
-  let state = createProgress(Array.from({ length: 15 }, (_, i) => `letter-${String(i + 1).padStart(2, '0')}`));
-  for (let i = 1; i < 15; i++) state = find(state, `letter-${String(i).padStart(2, '0')}`);
-  assert.equal(foundCount(state), 14);
+  let state = createProgress(Array.from({ length: 14 }, (_, i) => `letter-${String(i + 1).padStart(2, '0')}`));
+  for (let i = 1; i < 14; i++) state = find(state, `letter-${String(i).padStart(2, '0')}`);
+  assert.equal(foundCount(state), 13);
   assert.equal(isComplete(state), false);
   assert.equal(progressReducer(state, { type: 'open', letterId: 'letter-01', at }), state);
-  state = find(state, 'letter-15');
+  state = find(state, 'letter-14');
   assert.equal(isComplete(state), true);
   assert.equal(progressReducer(state, { type: 'open', letterId: 'letter-01', at }).letters['letter-01'].openedAt, at);
 });

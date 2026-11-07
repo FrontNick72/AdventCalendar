@@ -12,9 +12,9 @@ test('built iPhone: full landscape screen keeps the phone scene without the desk
   expect(Math.abs(phone!.x + phone!.width / 2 - 852 / 2)).toBeLessThan(2);
   await page.getByRole('button', { name: HOUSE[0].places[0].label, exact: true }).tap();
   await page.getByRole('button', { name: 'Забрать спрятанное письмо', exact: true }).tap();
-  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 14');
   await page.setViewportSize({ width: 393, height: 659 });
-  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 14');
   await expect(page.locator('.desktop-note')).toBeHidden();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
@@ -35,7 +35,7 @@ test('built iPhone: delayed cold images and a failed room can recover without lo
   expect(await page.locator('.scene-image').evaluate((el) => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await page.getByRole('button', { name: HOUSE[0].places[0].label, exact: true }).tap();
   await page.getByRole('button', { name: 'Забрать спрятанное письмо', exact: true }).tap();
-  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 14');
   await page.route(`**${HOUSE[1].image}`, (route) => route.abort());
   await page.locator('.room-navigation button').nth(1).tap();
   await expect(page.locator('.image-error')).toBeVisible();
@@ -46,7 +46,7 @@ test('built iPhone: delayed cold images and a failed room can recover without lo
   await expect(page.locator('.scene-image')).toHaveJSProperty('complete', true);
   expect(await page.locator('.scene-image').evaluate((el) => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
   await expect(page.locator('.image-error')).toHaveCount(0);
-  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 1 из 14');
   expect(await page.evaluate((key) => localStorage.getItem(key), STORAGE_KEY)).toBe(before);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect(origins).toEqual(new Set(['http://127.0.0.1:4183']));

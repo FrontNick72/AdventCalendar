@@ -4,7 +4,7 @@ import { createProgress, progressReducer } from '../src/state/progress';
 import { parseProgress } from '../src/state/storage';
 import { exportProgress, importProgress, MAX_BACKUP_BYTES } from '../src/state/transfer';
 
-const ids = Array.from({ length: 15 }, (_, i) => `letter-${String(i + 1).padStart(2, '0')}`);
+const ids = Array.from({ length: 14 }, (_, i) => `letter-${String(i + 1).padStart(2, '0')}`);
 const at = '2026-11-04T12:00:00.000Z';
 
 test('backup roundtrip preserves room, revealed-but-uncollected objects and independent events', () => {
@@ -13,10 +13,10 @@ test('backup roundtrip preserves room, revealed-but-uncollected objects and inde
   progress = progressReducer(progress, { type: 'scene', sceneId: 'tree' });
   for (const id of ids) {
     progress = progressReducer(progress, { type: 'reveal', letterId: id });
-    if (id !== ids[14]) progress = progressReducer(progress, { type: 'find', letterId: id, at });
+    if (id !== ids[13]) progress = progressReducer(progress, { type: 'find', letterId: id, at });
   }
   assert.deepEqual(importProgress(`\uFEFF${exportProgress(progress)}`, ids).progress, progress);
-  progress = progressReducer(progress, { type: 'find', letterId: ids[14], at });
+  progress = progressReducer(progress, { type: 'find', letterId: ids[13], at });
   progress = progressReducer(progress, { type: 'open', letterId: ids[0], at });
   progress = progressReducer(progress, { type: 'unwrap', letterId: ids[0], at });
   progress = progressReducer(progress, { type: 'open', letterId: ids[1], at });
@@ -43,7 +43,7 @@ test('invalid, unrelated, oversized and incompatible backups are rejected withou
   assert.deepEqual(current, before);
 });
 
-test('unwrapping without opening and opening before the 15th find cannot be imported', () => {
+test('unwrapping without opening and opening before the 14th find cannot be imported', () => {
   const progress = createProgress(ids);
   progress.letters[ids[0]].unwrappedAt = at;
   assert.throws(() => importProgress(exportProgress(progress), ids));

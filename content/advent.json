@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "locale": "ru-RU",
   "recipientName": "Даша",
-  "letterCount": 15,
+  "letterCount": 14,
   "letters": [
     {
       "id": "letter-01",
@@ -156,68 +156,63 @@
     },
     {
       "id": "letter-11",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется к любимым героям",
       "salutation": "",
-      "paragraphs": [],
+      "paragraphs": [
+        "Любимые истории умеют радовать даже за пределами страниц и экрана. Пусть немного этого настроения поселится рядом с тобой 💜"
+      ],
       "signature": [
         "С любовью, твой Никитосий."
       ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "giftId": "gift-11",
+      "packageNumber": 11,
+      "pickupNote": "Найди свёрток №11."
     },
     {
       "id": "letter-12",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется создать свой маленький мир",
       "salutation": "",
-      "paragraphs": [],
+      "paragraphs": [
+        "Можно никуда не спешить и собирать удовольствие по кусочкам. Здесь найдётся занятие для твоих рук, а я пока займусь чаем и чем-нибудь вкусным ❤️"
+      ],
       "signature": [
         "С любовью, твой Никитосий."
       ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "giftId": "gift-12",
+      "packageNumber": 12,
+      "pickupNote": "Найди свёрток №12."
     },
     {
       "id": "letter-13",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется быть чуть ближе к Корее",
       "salutation": "",
-      "paragraphs": [],
+      "paragraphs": [
+        "Пусть маленький кусочек Кореи поселится у нас дома. Чтобы даже среди самых обычных дел тебе встречалось что-то любимое и становилось чуть радостнее ❤️"
+      ],
       "signature": [
         "С любовью, твой Никитосий."
       ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "giftId": "gift-13",
+      "packageNumber": 13,
+      "pickupNote": "Найди свёрток №13."
     },
     {
       "id": "letter-14",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
+      "contentStatus": "ready",
+      "envelopeTitle": "Когда хочется впустить праздник",
       "salutation": "",
-      "paragraphs": [],
+      "paragraphs": [
+        "Хочу, чтобы каждую зиму у нас было всё больше маленьких вещей, которые приятно доставать из коробки. Пусть эти станут частью наших новогодних вечеров ❤️"
+      ],
       "signature": [
         "С любовью, твой Никитосий."
       ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
-    },
-    {
-      "id": "letter-15",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
-      "salutation": "",
-      "paragraphs": [],
-      "signature": [
-        "С любовью, твой Никитосий."
-      ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
+      "giftId": "gift-14",
+      "packageNumber": 14,
+      "pickupNote": "Найди свёрток №14."
     }
   ]
 }

@@ -113,7 +113,7 @@ export default function App() {
       <h2>Письма<br /><em>для Даши</em></h2>
       <p>Там, где тепло.<br />Там, где тебя ждут.</p>
       <span className="desktop-note-rule" />
-      <span className="prototype-label">Три комнаты. Пятнадцать писем.<br />Каждое — в своё настроение.</span>
+      <span className="prototype-label">Три комнаты. {content.letterCount} писем.<br />Каждое — в своё настроение.</span>
     </aside>
     <main className={`phone phone--${view}`}>
       <div className={`scene scene--${view === 'room' ? 'room' : 'desk'} ${arrival ? `desk-arrival desk-arrival--${arrival}` : ''}`} ref={stage}>
@@ -144,12 +144,12 @@ export default function App() {
       </div>
     </main>
     {!progress.introSeen && !settingsOpen && <Modal title="Даша, заходи" className="welcome-dialog" onClose={() => dispatch({ type: 'intro' })}>
-      <p>За окном снег, а здесь тепло.<br />И для тебя спрятано 15 писем.</p>
+      <p>За окном снег, а здесь тепло.<br />И для тебя спрятано {content.letterCount} писем.</p>
       <p className="dialog-secondary">Присмотрись к вещам вокруг.<br />Некоторые хранят маленький секрет.</p>
       <button className="paper-button primary" onClick={() => dispatch({ type: 'intro' })}>Начать поиск <span aria-hidden="true">→</span></button>
     </Modal>}
     {settingsOpen && <Modal title="Наш маленький дом" onClose={() => { setSettingsOpen(false); setResetRequested(false); }}>
-      <p>В трёх комнатах спрятано по пять писем. Открывай, отодвигай и заглядывай за предметы. После всех находок зажжётся лампа у стола.</p>
+      <p>В трёх комнатах спрятано {content.letterCount} писем. Открывай, отодвигай и заглядывай за предметы. После всех находок зажжётся лампа у стола.</p>
       {content.letters.some((item) => item.contentStatus === 'draft') && <p>Пока это пробный проход: тексты писем ещё готовятся, номера свёртков не назначены.</p>}
       <p className="dialog-secondary">Находка, чтение и распаковка отмечаются отдельно. Прогресс сохраняется в этом браузере по этому адресу.</p>
       {storageStatus === 'invalid' && <div className="storage-explanation"><p>Исходное сохранение не изменено. Можно скачать его перед новым поиском.</p><button className="text-button" onClick={downloadOriginal}>Скачать исходное сохранение</button></div>}

@@ -55,14 +55,14 @@ export function parseContent(value: unknown): AdventContent {
 }
 
 export function assertReady(content: AdventContent): void {
-  if (content.letterCount !== 15) throw new Error('В готовом календаре должно быть 15 писем.');
+  if (content.letterCount !== 14) throw new Error('В готовом календаре должно быть 14 писем.');
   const packages = new Set<number>();
   const gifts = new Set<string>();
   for (const letter of content.letters) {
     if (letter.contentStatus !== 'ready' || !letter.envelopeTitle.trim() ||
         !letter.paragraphs.length || letter.paragraphs.some((p) => !p.trim()) ||
         !letter.signature.length || letter.signature.some((p) => !p.trim()) ||
-        !letter.giftId?.trim() || letter.packageNumber === null || letter.packageNumber > 15 ||
+        !letter.giftId?.trim() || letter.packageNumber === null || letter.packageNumber > content.letterCount ||
         packages.has(letter.packageNumber) || gifts.has(letter.giftId)) {
       throw new Error(`Письмо ${letter.id} ещё не готово или повторяет номер свёртка/подарок.`);
     }

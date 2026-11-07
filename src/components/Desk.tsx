@@ -13,7 +13,7 @@ export function Desk({ letters, selectedId, progress, onSelect, onOpen, onRoom }
   function move(delta: number) { onSelect(letters[(index + delta + letters.length) % letters.length].id); }
 
   return <div className="desk-content">
-    <div className="envelope-collection" role="group" aria-label="Все 15 конвертов">
+    <div className="envelope-collection" role="group" aria-label={`Все ${letters.length} конвертов`}>
       {letters.map((item, position) => <button key={item.id} className={`collection-envelope ${item.id === selectedId ? 'collection-envelope--selected' : ''}`}
         aria-label={`Выбрать письмо «${letterTitle(item)}»${progress.letters[item.id].openedAt ? ', прочитано' : ''}`}
         aria-pressed={item.id === selectedId} onClick={() => onSelect(item.id)}>

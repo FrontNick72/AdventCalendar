@@ -1,6 +1,7 @@
 import { createProgress, type Progress } from './progress';
 import { isSceneId } from '../scenes/house';
 
+// Keep this existing key so previously saved progress survives the 14-letter release.
 // Never read or overwrite the old one-letter demo save.
 export const STORAGE_KEY = 'dasha-winter:house-15:v2';
 export type StorageStatus = 'ok' | 'unavailable' | 'invalid';
@@ -23,6 +24,14 @@ function timestamp(value: unknown): value is string | null {
 
 export function parseProgress(raw: string, ids: string[]): Progress {
   const value: unknown = JSON.parse(raw);
+  // Validate the complete former save before removing the retired hiding place.
+  if (ids.length === 14 && !ids.includes('letter-15') && record(value) && record(value.letters) &&
+      Object.keys(value.letters).length === 15 && Object.hasOwn(value.letters, 'letter-15')) {
+    const legacy = parseProgress(raw, [...ids, 'letter-15']);
+    delete legacy.letters['letter-15'];
+    legacy.revealedIds = legacy.revealedIds.filter((id) => id !== 'letter-15');
+    return legacy;
+  }
   if (!record(value) || value.schemaVersion !== 2 || !isSceneId(value.currentScene) || typeof value.introSeen !== 'boolean' ||
       !Array.isArray(value.revealedIds) || !value.revealedIds.every((id) => typeof id === 'string' && ids.includes(id)) ||
       new Set(value.revealedIds).size !== value.revealedIds.length || !record(value.letters) ||

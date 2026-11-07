@@ -10,13 +10,13 @@ async function checkWidth(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 }
 
-test('iPhone: real taps find 15 letters, restore a partial search and open the desk', async ({ page }, info) => {
+test('iPhone: real taps find 14 letters, restore a partial search and open the desk', async ({ page }, info) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('response', (response) => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
   await page.goto('/');
   await page.getByRole('button', { name: 'Начать поиск' }).tap();
-  await expect(page.locator('.counter')).toHaveText('Найдено 0 из 15');
+  await expect(page.locator('.counter')).toHaveText('Найдено 0 из 14');
   await page.screenshot({ path: info.outputPath('nook.png') });
   let found = 0;
   for (const [index, scene] of HOUSE.entries()) {
@@ -31,12 +31,12 @@ test('iPhone: real taps find 15 letters, restore a partial search and open the d
         // Reload with a revealed-but-not-collected letter, not only after a find.
         await page.reload();
         await expect(page.getByRole('heading', { level: 1 })).toHaveText(scene.title);
-        await expect(page.locator('.counter')).toHaveText(`Найдено ${found} из 15`);
+        await expect(page.locator('.counter')).toHaveText(`Найдено ${found} из 14`);
       }
       await page.getByRole('button', { name: 'Забрать спрятанное письмо', exact: true }).tap();
       found++;
-      await expect(page.locator('.counter')).toHaveText(`Найдено ${found} из 15`);
-      if (found < 15) await expect(page.getByRole('button', { name: 'К столу с письмами' })).toHaveCount(0);
+      await expect(page.locator('.counter')).toHaveText(`Найдено ${found} из 14`);
+      if (found < 14) await expect(page.getByRole('button', { name: 'К столу с письмами' })).toHaveCount(0);
       await checkWidth(page);
     }
   }
@@ -47,22 +47,25 @@ test('iPhone: real taps find 15 letters, restore a partial search and open the d
     await page.screenshot({ path: info.outputPath('arrival.png') });
   }
   await expect(page.locator('.desk-arrival')).toHaveCount(0);
-  await expect(page.locator('.collection-envelope')).toHaveCount(15);
+  await expect(page.locator('.collection-envelope')).toHaveCount(14);
   await expect(page.locator('.envelope-collection')).toHaveCSS('opacity', '1');
   await page.screenshot({ path: info.outputPath('desk.png') });
-  for (let index = 0; index < 15; index++) {
+  for (let index = 0; index < 14; index++) {
     await page.locator('.collection-envelope').nth(index).tap();
     await page.getByRole('button', { name: 'Открыть письмо', exact: true }).tap();
     const title = rawContent.letters[index].envelopeTitle || `Письмо ${String(index + 1).padStart(2, '0')}`;
     await expect(page.locator('#letter-heading')).toHaveText(title);
-    await expect(page.getByRole('button', { name: 'Я распаковала подарок' })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Я распаковала подарок' })).toBeVisible();
+    await expect(page.locator('.salutation')).toHaveCount(0);
+    await expect(page.locator('.letter-signature')).toHaveText('С любовью, твой Никитосий.');
+    await expect(page.locator('.package-number')).toHaveAttribute('aria-label', `Свёрток номер ${index + 1}`);
     await page.getByRole('button', { name: 'К конвертам', exact: true }).tap();
   }
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Все письма дома');
   const saved = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), STORAGE_KEY);
   const entries = Object.values(saved.letters) as { openedAt: string | null; unwrappedAt: string | null }[];
-  expect(entries.filter((entry) => entry.openedAt)).toHaveLength(15);
+  expect(entries.filter((entry) => entry.openedAt)).toHaveLength(14);
   expect(entries.filter((entry) => entry.unwrappedAt)).toHaveLength(0);
   await checkWidth(page);
   expect(errors).toEqual([]);

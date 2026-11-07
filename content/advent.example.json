@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "locale": "ru-RU",
   "recipientName": "Даша",
-  "letterCount": 15,
+  "letterCount": 14,
   "letters": [
     {
       "id": "letter-01",
@@ -178,19 +178,6 @@
     },
     {
       "id": "letter-14",
-      "contentStatus": "draft",
-      "envelopeTitle": "",
-      "salutation": "",
-      "paragraphs": [],
-      "signature": [
-        "С любовью, твой Никитосий."
-      ],
-      "giftId": null,
-      "packageNumber": null,
-      "pickupNote": null
-    },
-    {
-      "id": "letter-15",
       "contentStatus": "draft",
       "envelopeTitle": "",
       "salutation": "",

@@ -27,7 +27,6 @@ export const HOUSE: HouseScene[] = [
     { letterId: 'letter-12', cover: 'drawer', label: 'Выдвинуть ящик письменного стола', hint: 'У письменного стола есть потайное место.', x: 82, y: 62, width: 27 },
     { letterId: 'letter-13', cover: 'notebook', label: 'Приподнять блокнот', hint: 'Под чистыми страницами бывает самое интересное.', x: 49, y: 54, width: 22 },
     { letterId: 'letter-14', cover: 'frame', label: 'Отвести маленькую рамку', hint: 'Загляни за рамку рядом с лампой.', x: 75, y: 49, width: 19 },
-    { letterId: 'letter-15', cover: 'curtain', label: 'Отвести штору в кабинете', hint: 'Последняя история может ждать у окна.', x: 91, y: 27, width: 13 },
   ] },
 ];
 export function isSceneId(value: unknown): value is SceneId {
