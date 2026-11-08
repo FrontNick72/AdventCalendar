@@ -92,6 +92,7 @@ button img { pointer-events: none; }
 .cache-letter { position: absolute; left: 15%; top: 27%; width: 70%; min-width: 44px; min-height: 44px; aspect-ratio: 1.4; padding: 0; border: 0; background: none; transform: rotate(-9deg); animation: appear .55s ease both; z-index: 3; }
 .hiding-place--cushion .cache-letter { width: 55%; left: 30%; }
 .hiding-place--open .cache-cover { transform: translate(-35%, 38%) rotate(-22deg); }
+.hiding-place--globe.hiding-place--open .cache-cover { transform: translate(110%, -30%); }
 .hiding-place--book.hiding-place--open .cache-cover, .hiding-place--notebook.hiding-place--open .cache-cover { transform: translate(-55%, 5%) rotate(-30deg); }
 .hiding-place--curtain.hiding-place--open .cache-cover { transform: translate(35%, 0) scaleX(.45); }
 .hiding-place--drawer.hiding-place--open .cache-cover { transform: translateY(70%); }
